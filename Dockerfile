@@ -3,11 +3,8 @@ FROM jenkins
 USER root
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get update \
-      && apt-get install -y sudo \
-      && rm -rf /var/lib/apt/lists/* \
-      && apt-get update \
-      && apt-get install -y build-essential \
-      && apt-get install -y nodejs
+      && apt-get install -y sudo build-essential nodejs \
+      && rm -rf /var/lib/apt/lists/*
 
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
  
